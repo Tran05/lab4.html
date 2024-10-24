@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 600px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Business Operations</li>
+                <li>Cloud Computing</li>
+                <li>Cybersecurity</li>
+                <li>Data Science</li>
+                <li>Development</li>
+                <li>IT Operations</li>
+                <li>Language Learning</li>
+                <li>Leadership & Management</li>
+                <li>Marketing</li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <div class="avatar">N</div>
+            <div class="welcome">
+                <p>Welcome back, Huynh Thi Ngoc Tran</p>
+                <a href="#">Add occupation and interests</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="dashboard">
+        <div class="streak">
+          <p class="weekly-streak">Weekly streak <i class="fas fa-calendar-alt"></i></p>
+          <p>One ring down, one to go. Keep it up! <i class="fas fa-bell"></i></p>
+          <div class="current-streak">
+            <p>2 weeks <i class="fas fa-fire"></i></p>
+          </div>
+          <div class="week">
+            <p>Current-streak <i class="fas fa-trophy"></i></p>
+          </div>
+          <div class="progress">
+            <div class="course-min">11/30 course min <i class="fas fa-book"></i></div>
+            <div class="visit">4/1 visit <i class="fas fa-check-circle"></i></div>
+          </div>
+          <a href="#" class="activity-link">See all activity <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </section>
+      
+        <div class="learning">
+            <h2>Pick up where you left off</h2>
+            <!-- Tabs for navigation -->
+            <div class="tabs">
+                <button class="tab-btn active">Courses</button>
+                <button class="tab-btn">Learning paths</button>
+                <button class="tab-btn">Certification preparation</button>
+            </div>
+            <div class="courses">
+                <div class="course">
+                    <video controls>
+                        <source src="c:\Users\AD\OneDrive\Desktop\lab4\Những thuộc tính CSS sử dụng trong Flexbox.mp4" type="video/mp4">
+                    </video>
+                    <h3>Introduction</h3>
+                    <p>1. Lecture • 1m</p>
+                </div>
+                <div class="course">
+                    <video controls>
+                        <source src="c:\Users\AD\OneDrive\Desktop\lab4\Những thẻ HTML thông dụng.mp4" type="video/mp4">
+                    </video>
+                    <h3>Integration Introduction</h3>
+                    <span>Lecture • 6m left</span>
+                </div>
+                <div class="course">
+                    <div class="course-info">
+                        <h3>Course 3: Quiz and Questions</h3>
+                        <p>Quiz • 9 questions</p>
+                    </div>
+                    <div class="quiz-section">
+                        <h4>Quiz:</h4>
+                        <ul>
+                            <li>Question 1: What is the primary purpose of this course?</li>
+                            <li>Question 2: Describe the key components discussed in the video.</li>
+                            <li>Question 3: How does integration help in system communication?</li>
+                        </ul>
+                        <a href="#" class="start-quiz" onclick="openQuiz()">Start Quiz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuiz()">&times;</span>
+            <h3>Course 3 Quiz</h3>
+            <form>
+                <!-- Question 1 -->
+                <div class="question">
+                    <label>1. What is the primary purpose of this course?</label><br>
+                    <textarea name="q1" rows="3" placeholder="Your answer..."></textarea>
+                </div>
+                <!-- Question 2 -->
+                <div class="question">
+                    <label>2. Describe the key components discussed in the video.</label><br>
+                    <textarea name="q2" rows="3" placeholder="Your answer..."></textarea>
+                </div>
+                <!-- Question 3 -->
+                <div class="question">
+                    <label>3. How does integration help in system communication?</label><br>
+                    <textarea name="q3" rows="3" placeholder="Your answer..."></textarea>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Submit Quiz</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <script>
+        // Function to open the quiz modal
+        function openQuiz() {
+            document.getElementById("quizModal").style.display = "block";
+        }
+
+// Function to close the quiz modal
+function closeQuiz() {
+    document.getElementById("quizModal").style.display = "none";
+}
+
+// Close the modal when the user clicks anywhere outside of it
+window.onclick = function(event) {
+    var modal = document.getElementById("quizModal");
+    if (event.target == modal) {
+        closeQuiz();
+    }
+}
+</script>
+<section class="recommendations">
+<h2>Based on your certification interests, we recommend</h2>
+<div class="recommend-cards">
+    <div class="recommend-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxErNu6lnYcf2uu_TSY5Ezrw5KSv08CUc6iQ&s.jpg" alt="Java OCAJP">
+        <h3>Oracle Certified Associate Java Programmer (OCAJP) 1Z0-808</h3>
+        <span>4.6 ★ (438)</span>
+    </div>
+    <div class="recommend-card">
+        <img src="https://s3.ap-southeast-1.amazonaws.com/gambaru.io/blog/wp-content/uploads/2021/09/22082818/java-la-gi.jpg" alt="Java Certification">
+        <h3>Oracle Java Certification - Pass the Associate 1Z0-808 Exam</h3>
+    </div>
+
+<div class="recommend-card">
+    <img src="https://tuhoclaptrinh.edu.vn/upload/post/2022/09/30/html-css-javascript-la-gi-20220930112510-837515.jpg" alt ="Java Bootcamp">
+    <h3>Complete Java SE 8 Developer Bootcamp - OCA Prep Included</h3>
+    <p class="instructor">Intertech Training, Jeff Jensen</p>
+    <p class="rating">Rating: 4.6 ★ (9,726 reviews)</p>
+</div>
+<div class="recommend-card">
+    <img src="https://mdigi.vn/wp-content/uploads/2023/06/vai-tro-cua-js-trong-phat-trien-web.jpg" alt="Spring Certification">
+    <h3>Spring Professional Certification Exam Tutorial - Module 02</h3>
+    <p class="instructor">Dominik Cebula</p>
+    <p class="rating">Rating: 4.6 ★ (1,121 reviews)</p>
+</div>
+</div>
+    <div class="container">
+    <div class="personalize-container">
+            <h2>Personalize your learning experience</h2>
+            <p>Add your occupation and interests to get better content recommendations.</p>
+            <button class="personalize-btn">Add occupation and interests</button>
+        </div>
+        <div>
+            
+        
+</body>
+</html>
+
+

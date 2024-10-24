@@ -1,0 +1,374 @@
+body, html {
+    height:100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #dee9f4;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #050c50;
+    color: #fff;
+    padding: 10px;
+}
+.dashboard {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    padding: 20px;
+}  
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.avatar {
+    background-color: #f72828;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.welcome p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.welcome a {
+    text-decoration: none;
+    color: #f5f8fb;
+}
+
+.dashboard, .recommendations, .personalize {
+    padding: 20px;
+}
+
+.streak, .learning, .recommendations, .personalize {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.weekly-streak {
+    font-weight: bold;
+    font-size: 18px;
+}
+/* Căn chỉnh biểu tượng và văn bản */
+.streak i, .progress i, .week i, .current-streak i {
+    margin-left: 8px; /* Khoảng cách giữa văn bản và biểu tượng */
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+  }
+  
+  /* Thêm phong cách cho biểu tượng trong các liên kết hoạt động */
+  .activity-link i {
+    margin-left: 5px;
+  }
+  
+  /* Tùy chỉnh màu sắc và kích thước biểu tượng */
+  .fa-calendar-alt, .fa-bell, .fa-fire, .fa-trophy, .fa-book, .fa-check-circle, .fa-arrow-right {
+    color: #e60000; /* Màu sắc biểu tượng */
+    font-size: 16px; /* Kích thước biểu tượng */
+  }
+  
+  
+
+.current-streak {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    flex-wrap: nowrap;
+}
+.current-streak .streak{
+    flex:1;
+    text-align: left;
+}
+.current-streak .weeks {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-streak .progress {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.current-streak .course-min {
+    margin-bottom: 10px; /* Thêm khoảng cách giữa hai phần tử */
+}  
+.current-streak  .visit {
+    margin-left: 0px; 
+}
+.current-streak span {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.current-streak p {
+    margin: 0;
+    font-size: 16px;
+}
+.progress {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* hoặc center nếu bạn muốn căn giữa */
+  }
+  
+  .course-min {margin-bottom: 10px; /* Thêm khoảng cách giữa hai phần tử */
+  }
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #007bff;
+}
+
+.tab-btn.active {
+    border-bottom: 2px solid #000;
+    font-weight: bold;
+}
+
+.progress {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.activity-link {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    right: 50px;
+    
+}
+
+.courses {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.recommend-cards {
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px; /* Độ rộng tùy chỉnh cho mỗi cột */
+    grid-auto-rows: auto; /* Chiều cao cố định cho mỗi hàng */
+    gap: 10px; /* Khoảng cách giữa các cột */
+    padding: 20px;
+    background-color:#dee9f4;
+}
+
+.recommend-card {
+    background-color: #fbfbfb; /* Màu nền cho các ô */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course {
+    text-align: center;
+    width: calc(33% - 10px);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    margin: 10px 0;
+    flex: 1 1 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.course img, .recommend-card img {
+    width: 100%;
+    height: auto;
+}
+.course video {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.quiz-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.start-quiz {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.start-quiz:hover {
+    background-color: #005bb5;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+   
+.personalize-container {
+    text-align: center;
+    background-color: white;
+    padding: 40px 0 ;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 0; /* Thêm dòng này để căn giữa */
+    
+}
+
+.personalize-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.personalize-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.personalize-btn {
+    background-color: #000;color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.personalize-btn:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .course, .recommend-card {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .course, .recommend-card {
+        width: 100%;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .current-streak, .progress {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

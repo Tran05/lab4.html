@@ -1,0 +1,13 @@
+function openQuiz() {
+document.getElementById("quizModal").style.display = "block";
+}
+
+function closeQuiz() {
+document.getElementById("quizModal").style.display = "none";
+}
+window.onclick = function(event) {
+var modal = document.getElementById("quizModal");
+if (event.target == modal) {
+closeQuiz();
+}
+}
